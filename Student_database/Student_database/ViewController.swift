@@ -31,6 +31,9 @@ class ViewController: UIViewController {
     }
     @IBAction func saveButton(_ sender: Any) {
         
+        
+        //inserting data into Students model
+        
         let newstudent = NSEntityDescription.insertNewObject(forEntityName: "Students", into: context)
         newstudent.setValue(self.namefield.text, forKey: "name")
         newstudent.setValue(self.subjectfield.text, forKey: "subject")
@@ -59,6 +62,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func searchBtn(_ sender: UIButton) {
+        
+        //filtering data by condition check
         
         let request = NSFetchRequest <NSFetchRequestResult>(entityName: "Students")
         let searchstr = searchfield.text
